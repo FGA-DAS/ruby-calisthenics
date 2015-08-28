@@ -16,8 +16,12 @@ module FunWithStrings
 
       return word_dict
   end
+  
+  #This solution was proposed on this topic on stack overflow by Andy Linderman
+  #http://stackoverflow.com/questions/9517745/ruby-anagram-using-stringsum
   def anagram_groups
-    # your code here
+      word_list = self.downcase.split(" ")
+      word_list.group_by{ |word| word.chars.sort}.values  
   end
 end
 
